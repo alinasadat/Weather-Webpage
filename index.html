@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar" aria-label="Weather details">
+      <button class="side-button active" data-panel="main">Main</button>
+      <button class="side-button" data-panel="uv">UV</button>
+      <button class="side-button" data-panel="wind">Winds</button>
+    </aside>
+
+    <section class="content">
+      <div id="loading" class="status">Getting Chicago weather…</div>
+      <div id="error" class="status error hidden"></div>
+
+      <section id="main" class="panel">
+        <p id="location" class="location">Chicago, Illinois</p>
+        <h1 id="temperature">--°F</h1>
+        <p id="advice" class="advice">Checking the next few hours…</p>
+        <p id="updated" class="updated"></p>
+      </section>
+
+      <section id="uv" class="panel hidden">
+        <p class="eyebrow">UV INDEX</p>
+        <h2 id="uv-value">--</h2>
+        <p id="uv-level" class="detail">Checking UV level…</p>
+      </section>
+
+      <section id="wind" class="panel hidden">
+        <p class="eyebrow">WIND</p>
+        <h2><span id="wind-speed">--</span> <span class="unit">mph</span></h2>
+        <p id="wind-detail" class="detail">Current wind speed</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
