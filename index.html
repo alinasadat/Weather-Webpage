@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar" aria-label="Weather details">
+      <button class="side-button active" data-panel="main">Main</button>
+      <button class="side-button" data-panel="uv">UV</button>
+      <button class="side-button" data-panel="wind">Winds</button>
+    </aside>
+
+    <section class="content">
+      <header class="location-controls">
+        <form id="location-search" role="search">
+          <label for="search-input">Search location</label>
+          <div class="search-row">
+            <input id="search-input" type="search" placeholder="City or postal code" autocomplete="off" aria-describedby="search-status">
+            <button type="submit" class="action-button">Search</button>
+            <button type="button" id="use-location" class="action-button">Use my location</button>
+          </div>
+          <p id="search-status" class="helper" role="status"></p>
+          <ul id="search-results" class="search-results hidden" aria-label="Matching locations"></ul>
+        </form>
+        <p id="location" class="location">Chicago, Illinois</p>
+      </header>
+      <div id="loading" class="status" role="status">Getting Chicago weather…</div>
+      <div id="error" class="status error hidden" role="alert"></div>
+
+      <section id="main" class="panel">
+        <h1 id="temperature">--°F</h1>
+        <p id="advice" class="advice">Checking the next few hours…</p>
+        <p id="updated" class="updated"></p>
+      </section>
+
+      <section id="uv" class="panel hidden">
+        <p class="eyebrow">UV INDEX</p>
+        <h2 id="uv-value">--</h2>
+        <p id="uv-level" class="detail">Checking UV level…</p>
+        <p id="uv-protection" class="advice"></p>
+        <p class="updated">Highest UV this hour and the next three hours.</p>
+        <a class="source" href="https://www.weather.gov/ilx/uv-index" target="_blank" rel="noopener">UV protection guidance</a>
+      </section>
+
+      <section id="wind" class="panel hidden">
+        <p class="eyebrow">WIND</p>
+        <h2><span id="wind-speed">--</span> <span class="unit">mph</span></h2>
+        <p id="wind-detail" class="detail">Current wind speed</p>
+      </section>
+      <footer class="weather-source">Weather by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
